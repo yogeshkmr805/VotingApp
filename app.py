@@ -16,5 +16,11 @@ def vote(candidate):
 def results():
     return votecounts
 
+# Reset the vote counts for all candidates
+@app.route('/reset', methods=['POST'])
+def reset():
+    votecounts.clear()
+    return "Vote counts have been reset!"
+
 if __name__ == '__main__':
     app.run(debug=True)
